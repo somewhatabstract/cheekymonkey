@@ -1,2 +1,3 @@
 # cheekymonkey
-User scripts for *monkey browser extensions
+
+User scripts for *monkey browser extensions.
