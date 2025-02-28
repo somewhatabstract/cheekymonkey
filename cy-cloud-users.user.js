@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cypress Cloud User Count
 // @namespace    https://github.com/somewhatabstract/cheekymonkey
-// @version      1.1
+// @version      1.2
 // @description  Show user count on Users admin page
 // @author       somewhatabstract
 // @match        https://cloud.cypress.io/organizations/*/users
@@ -33,6 +33,7 @@
         summaryEl.append(activeEl);
         summaryEl.append(pendingEl);
 
+        usersHeader.style.alignItems = "center";
         usersHeader.append(summaryEl);
     };
 
