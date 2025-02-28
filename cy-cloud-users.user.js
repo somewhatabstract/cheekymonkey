@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cypress Cloud User Count
 // @namespace    https://github.com/somewhatabstract/cheekymonkey
-// @version      1.0
+// @version      1.1
 // @description  Show user count on Users admin page
 // @author       somewhatabstract
 // @match        https://cloud.cypress.io/organizations/*/users
@@ -12,27 +12,29 @@
 (function() {
     'use strict';
 
+    let summaryEl = null;
     const updateHeader = () => {
         const usersHeader = document.querySelector('.page-header--title');
-
-        if (!usersHeader) {
-            setTimeout(updateHeader, 500);
+        if (!window.location.pathname.endsWith('/users') || !usersHeader) {
+            summaryEl = null;
             return;
         }
 
         const totalUsers = document.querySelectorAll('.user-info').length;
         const pendingUsers = document.querySelectorAll('.invited-text').length;
 
-        const summaryEl = document.createElement("div");
+        summaryEl = summaryEl ?? document.createElement("div");
         const activeEl = document.createElement("div");
         activeEl.innerHTML = `${totalUsers - pendingUsers}&nbsp;active`;
-        summaryEl.append(activeEl);
         const pendingEl = document.createElement("div");
         pendingEl.innerHTML = `${pendingUsers}&nbsp;pending`;
+
+        summaryEl.innerHTML = "";
+        summaryEl.append(activeEl);
         summaryEl.append(pendingEl);
 
         usersHeader.append(summaryEl);
     };
 
-    updateHeader();
+    setInterval(() => updateHeader(), 250);
 })();
