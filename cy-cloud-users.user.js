@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Cypress Cloud User Count
 // @namespace    https://github.com/somewhatabstract/cheekymonkey
-// @version      1.2
+// @version      1.3
 // @description  Show user count on Users admin page
 // @author       somewhatabstract
-// @match        https://cloud.cypress.io/organizations/*/users
+// @match        https://cloud.cypress.io/organizations/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=cypress.io
 // @grant        none
 // ==/UserScript==
