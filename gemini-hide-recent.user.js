@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Hide Gemini Conversations
-// @namespace    http://tampermonkey.net
+// @namespace    https://github.com/somewhatabstract/cheekymonkey
 // @version      1.0
 // @description  Hides the Recent Conversations list in Gemini
 // @author       somewhatabstract
