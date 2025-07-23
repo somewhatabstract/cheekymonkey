@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Hide Gemini Conversations
 // @namespace    https://github.com/somewhatabstract/cheekymonkey
-// @version      1.1
+// @version      1.2
 // @description  Hides the Recent Conversations list in Gemini
 // @author       somewhatabstract
 // @match        https://gemini.google.com/app/*
+// @match        https://gemini.google.com/gem/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @grant        none
 // ==/UserScript==
@@ -12,6 +13,7 @@
 // ==ChangeLog==
 // 1.0 - Added button to hide/show the Recent Conversations list
 // 1.1 - Updated @match to include all app pages
+// 1.2 - Support /gem path
 // ==/ChangeLog==
 
 (function () {
