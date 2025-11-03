@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hide Gemini Conversations
 // @namespace    https://github.com/somewhatabstract/cheekymonkey
-// @version      1.6
+// @version      1.7
 // @description  Hides the Recent Conversations list in Gemini
 // @author       somewhatabstract
 // @match        https://gemini.google.com
@@ -18,6 +18,7 @@
 // 1.4 - Support all paths under gemini.google.com
 // 1.5 - Default to hiding the list
 // 1.6 - Fix the initial state
+// 1.7 - Update to account for changes in Gemini's DOM structure
 // ==/ChangeLog==
 
 (function () {
@@ -42,9 +43,7 @@
   };
 
   const getConversationsHeader = () => {
-    const container = getConversationsContainer();
-    if (!container) return;
-    const headers = container.getElementsByClassName("title-container");
+    const headers = document.getElementsByClassName("title-container");
     if (!headers?.length) return;
     return headers[0];
   };
